@@ -1,6 +1,6 @@
 import { createSettingsStyles } from "@/assets/styles/settings.styles";
-//import DangerZone from "@/components/DangerZone";
-//import Preferences from "@/components/Preferences";
+import DangerZone from "@/components/DangerZone";
+import Preferences from "@/components/Preferences";
 import ProgressStats from "@/components/ProgressStats";
 import useTheme from "@/hooks/useTheme";
 import { Ionicons } from "@expo/vector-icons";
@@ -13,11 +13,6 @@ const settings = () => {
 
   const { colors } = useTheme();
   const settingsStyles = createSettingsStyles(colors);
-
-  const [isAutoSync, setIsAutoSync] = useState(true);
-  const [isNotificationsEnabled, setIsNotificationsEnabled] = useState(true);
-
-  //const {colors, isDarkMode, toggleDarkMode}=useTheme();
 
   return (
     <LinearGradient colors={colors.gradients.background} style={settingsStyles.container}>
@@ -38,6 +33,10 @@ const settings = () => {
         >
           <ProgressStats />
 
+          {/* Preferences */}
+          <Preferences />
+
+          <DangerZone />
         </ScrollView>
       </SafeAreaView>
     </LinearGradient>
